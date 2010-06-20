@@ -1,0 +1,14 @@
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
+%head
+  %title tewdew
+  %script{:type => "text/javascript",
+          :src  => "javascript/jquery.js"}
+  %script{:type => "text/javascript",
+          :src  => "javascript/tewdew.js"}
+#content
+  #header
+    %h2 tewdew
+  #newtask
+    = partial :addtask
+  #tasks
+    = partial :tasks
