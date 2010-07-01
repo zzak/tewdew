@@ -1,0 +1,47 @@
+= Tewdew
+
+Tewdew is a simple task managing web app built on Ruby with the Sinatra DSL.
+
+To run the app:
+
+  ruby main.rb
+  
+View at: http://localhost:4567
+
+== Deploying to Heroku
+
+I've setup production mode for deploying to heroku
+
+  # clone the app
+  $git clone git://github.com/zacharyscott/tewdew.git
+  
+  # push to git
+  $git remote add heroku git@heroku.com:my-tewdew-app.git
+  $git push heroku master
+  
+More info: {Deploying Sinatra on Heroku}[http://blog.heroku.com/archives/2009/3/5/32_deploy_merb_sinatra_or_any_rack_app_to_heroku/]
+
+== Testing
+
+Tewdew uses Rack::Test and Test::Unit for all of it's testing.
+
+To run the tests:
+
+  ruby tests.rb
+  
+== Additional Resources
+
+* {Sinatra}[http://www.sinatrarb.com/] - Ruby DSL tewdew was built on
+* {Datamapper}[http://datamapper.org/] - Ruby Object Relational Mapper tewdew uses
+* {dm-core}[http://github.com/datamapper/dm-core] - Datamapper dm-core documentation and development
+* {jQuery}[http://jquery.com/] - tewdew uses jQuery to magically add new tasks
+* {Rack::Test}[http://github.com/brynary/rack-test] - tewdew uses Rack::Test for testing
+* {Test::Unit}[http://ruby-doc.org/stdlib/libdoc/test/unit/rdoc/] - rdoc api information for Test:Unit
+* {haml}[http://haml-lang.com/] - tewdew uses haml for all of it's views
+* {sass}[http://sass-lang.com/] - tewdew uses sass for its css
+
+== Todo
+
+* All tests to pass 100%
+* Adapt an authorization service, such as OAuth or Rack::Auth to allow use on public networks
+* Port to Android -- jruby or {ruboto}[http://ruboto.org/]
