@@ -1,7 +1,20 @@
--@tasks.each do |task|
-  %div{ :class => "task-#{task.id}"}
-    =task.title
-    %form{:method=>"post", :action=>"/delete/#{task.id}"}
-      %input{:type=>"hidden", :name=>"_method", :value=>"delete"}
-      %input{:type=>"hidden", :name=>"task_id", :value=>task.id, :class=>"task_id"}
-      %input{:type=>"submit", :class=>"deleteTask", :value=>"Delete"}
+-unless @tasks.nil?
+  -@tasks.each do |task|
+    -if task.status == false
+      %div{ :class => "taskItem task-#{task.id}"}
+        %div{:class=>"taskTitle"}
+          = task.title
+        %div{:class=>"taskStatus"}
+          %img{:title=>"taskStatus", :src=>"images/#{task.status}.png", :width=>"30"}
+        %form{:method=>"get", :action=>"/edit/#{task.id}"}
+          %input{:type=>"image", :src=>"images/edit.png", :width=>"30", :class=>"editTask", :value=>"Edit"}
+        %p= "#{task.created_at.strftime("%m/%d/%Y")} #{task.created_at.strftime("%I:%M%p")}"
+    -else
+      %div{ :class => "taskItem completed task-#{task.id}"}
+        %div{:class=>"taskTitle"}
+          = task.title
+        %div{:class=>"taskStatus"}
+          %img{:title=>"taskStatus", :src=>"images/#{task.status}.png", :width=>"30"}
+        %form{:method=>"get", :action=>"/edit/#{task.id}"}
+          %input{:type=>"image", :src=>"images/edit.png", :width=>"30", :class=>"editTask", :value=>"Edit"}
+        %p= "#{task.created_at.strftime("%m/%d/%Y")} #{task.created_at.strftime("%I:%M%p")}"
