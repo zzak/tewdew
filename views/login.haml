@@ -1,0 +1,14 @@
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
+  %head
+    %title tewdew
+    %script{:type => "text/javascript",
+      :src => "javascript/jquery.js"}
+    %script{:type => "text/javascript",
+      :src => "javascript/tewdew.js"}
+    %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/stylesheet.css"}
+  %body
+    #content
+      #header
+        %h2 tewdew
+      #login
+        = partial :_login
