@@ -6,3 +6,4 @@ db/*.db
 .emacs*
 .bundle*
 Gemfile.lock
+config.yml
