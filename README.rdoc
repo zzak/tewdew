@@ -4,9 +4,10 @@ Tewdew is a simple task managing web app built on Ruby with the Sinatra DSL.
 
 To run the app:
 
-  ruby main.rb
+  bundle install
+  rackup config.ru
   
-View at: http://localhost:4567
+View at: http://localhost:9292
 
 == Deploying to Heroku
 
@@ -43,5 +44,4 @@ To run the tests:
 == Todo
 
 * All tests to pass 100%
-* Adapt an authorization service, such as OAuth or Rack::Auth to allow use on public networks
 * Port to Android -- jruby or {ruboto}[http://ruboto.org/]
