@@ -12,8 +12,8 @@ gem 'sqlite3-ruby', :group => [:development, :test], :require => "sqlite3"
 gem 'dm-sqlite-adapter', '1.0.0', :group => [:development, :test]
 gem 'do_sqlite3', :group => [:development, :test]
 
-#group :production do
-#  gem 'pg'
-#  gem 'do_postgres'
-#  gem 'dm-postgres-adapter'
-#end
+group :production do
+  gem 'pg'
+  gem 'do_postgres'
+  gem 'dm-postgres-adapter'
+end
