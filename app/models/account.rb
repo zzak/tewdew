@@ -13,6 +13,8 @@ class Account
   property :crypted_password, String
   property :salt,             String
   property :role,             String
+  
+  has n, :tasks
 
   # Validations
   validates_presence_of      :email, :role

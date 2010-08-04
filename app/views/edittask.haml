@@ -1,0 +1,17 @@
+%div{:id=>"edittask"}
+  %p Update a tasks status or remove it
+  -unless @task.nil?
+    %h4{:id=>"editTaskTitle"}= @task.title
+    %div{ :id => "editTaskForms"}
+      %div{ :id => "editTask" }
+        %form{:method=>"post", :action=>"/update"}
+          %input{:type=>"hidden", :name=>"_method", :value=>"put"}
+          %input{:type=>"hidden", :name=>"task_id", :value=>"#{@task.id}", :class=>"task_id"}
+          %input{:type=>"submit", :class=>"editTask", :value=>"Completed"}
+      %div{ :id => "deleteTask" }
+        %form{:method=>"post", :action=>"/delete"}
+          %input{:type=>"hidden", :name=>"_method", :value=>"delete"}
+          %input{:type=>"hidden", :name=>"task_id", :value=>"#{@task.id}", :class=>"task_id"}
+          %input{:type=>"submit", :class=>"deleteTask", :value=>"Delete"}
+  -else
+    %p no task found

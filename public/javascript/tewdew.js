@@ -8,4 +8,9 @@ $(document).ready(function() {
     });
     return false;
   });
+  
+  $("#newtask").hide();
+  $("#shownewtask").click(function() {
+    $("#newtask").slideToggle();
+  });
 });
