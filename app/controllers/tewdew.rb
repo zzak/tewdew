@@ -20,10 +20,12 @@ Tewdew.controllers :tewdew do
 
   post :add, :map => '/add' do
     # add a new task
-    @task = Task.create(
+    @task = Task.new(
       :title => params[:title],
       :created_at => Time.now
     )
+    @task.account = session[:account]
+    @task.save!
     #redirect "/"
   end
 

@@ -32,15 +32,12 @@ class Tewdew < Padrino::Application
   #     render 'errors/404'
   #   end
   #
-  set :login_page, "/admin/sessions/new"
+  set :login_page, "/sessions/new"
   disable :store_location
 
   access_control.roles_for :any do |role|
     role.protect "/"
     role.allow "/sessions"
-  end
-
-  access_control.roles_for :tewdew do |role|
-      role.project_module :tasks, "/tasks"
+    role.project_module :tasks, "/tasks"
   end
 end
