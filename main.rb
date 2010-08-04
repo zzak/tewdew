@@ -5,7 +5,6 @@ require 'sass'
 require 'dm-core'
 require 'dm-migrations'
 require 'dm-validations'
-require 'sinatra_warden'
 
 configure :test do 
   puts 'Test configuration in use'
@@ -45,7 +44,6 @@ end
 DataMapper.finalize.auto_upgrade!
 
 class Application < Sinatra::Base
-  register Sinatra::Warden
 
   helpers do
     # Usage: partial :foo
@@ -66,13 +64,11 @@ class Application < Sinatra::Base
   end
 
   get '/tasks' do
-    authorize!('/login')
     @tasks = Task.all(:order => [ :status.asc ])
     haml :tasks
   end
 
   post '/add' do
-    authorize!('/login')
     # add a new task
     @task = Task.create(
       :title => params[:title],
@@ -82,14 +78,12 @@ class Application < Sinatra::Base
   end
 
   get '/edit/:id' do
-    authorize!('/login')
     # edit a task form
     @task = Task.get(params[:id])
     haml :edittask
   end
 
   put '/update' do
-    authorize!('/login')
     # update a task
     @task = Task.get(params[:task_id])
     @task.update(:status=>true)
@@ -97,7 +91,6 @@ class Application < Sinatra::Base
   end
 
   delete '/delete' do
-    authorize!('/login')
     # delete a task
     @task = Task.get(params[:task_id])
     @task.destroy!
