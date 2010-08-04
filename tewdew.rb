@@ -43,7 +43,7 @@ end
 
 DataMapper.finalize.auto_upgrade!
 
-class Application < Sinatra::Base
+class Tewdew < Sinatra::Base
 
   helpers do
     # Usage: partial :foo

@@ -7,6 +7,6 @@ set :views,    File.expand_path(File.dirname(__FILE__) + '/../views')
 set :env,      :development
 #disable :run, :reload
 
-require "main.rb"
+require "tewdew.rb"
 
-run Application
+run Tewdew
