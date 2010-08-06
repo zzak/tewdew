@@ -4,7 +4,6 @@
   <tr>
     <th>Title</th>
     <th>Status</th>
-    <th>References</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +13,6 @@
   <tr>
     <td><%= task.title %></td>
     <td><%= task.status %></td>
-    <td><%= task.references %></td>
     <td><%= link_to 'Show', task %></td>
     <td><%= link_to 'Edit', edit_task_path(task) %></td>
     <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>

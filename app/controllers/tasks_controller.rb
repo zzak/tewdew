@@ -4,7 +4,7 @@ before_filter :authenticate_user!
   # GET /tasks
   # GET /tasks.xml
   def index
-    @tasks = Task.all(:conditions=>{:user => current_user})
+    @tasks = Task.all(:conditions=>{:user_id => current_user})
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +44,7 @@ before_filter :authenticate_user!
   # POST /tasks.xml
   def create
     @task = Task.new(params[:task])
-    @task.user == current_user
+    @task.user = current_user
 
     respond_to do |format|
       if @task.save
