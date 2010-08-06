@@ -1,16 +1,7 @@
-class Task
-  include DataMapper::Resource
-  include DataMapper::Validate
+class Task < ActiveRecord::Base
   
-  property :id, Serial
-  property :title, String
-  property :status, Boolean, :default => false
-  property :created_at, DateTime
+  validates_presence_of :title
   
-  belongs_to :account
-
-  # Validations
-  validates_presence_of      :title
-
-
+  
+  belongs_to :user
 end
