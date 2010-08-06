@@ -1,4 +1,6 @@
 Tewdew::Application.routes.draw do
+  resources :tasks
+
   devise_for :users, :path_names => { :sign_up => "register" }
 
   # The priority is based upon order of creation:

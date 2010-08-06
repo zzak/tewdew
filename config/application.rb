@@ -38,5 +38,6 @@ module Tewdew
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    config.secret_token = '546c379f0f1403ec27240ca7b8b0d4222a2537399ed2b4e23325ed26a9c8a97c35d82b4664abe87b2cee4b7b15686127d8946a9519a03eb80b62e26309c5354d'
   end
 end
