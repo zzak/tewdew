@@ -1,47 +1,60 @@
 = Tewdew
 
-Tewdew is a simple task managing web app built on Ruby with the Sinatra DSL.
+Simple to do list application built on Rails. You'll need to set up a Postgres database if you're going to use the default setup.
 
 To run the app:
 
+  gem install bundler --pre
+  # clone the app
+  $git clone git://github.com/zacharyscott/tewdew.git
   bundle install
-  rackup config.ru
+  # edit database.yml for your database setup
+  rake db:create
+  rake db:migrate
+  rake db:seed
+  rails s
   
-View at: http://localhost:9292
+View at: http://localhost:3000
 
 == Deploying to Heroku
 
-I've setup production mode for deploying to heroku
+I've designed this to be a Heroku app, so here's a quick way to set that up.
 
-  # clone the app
-  $git clone git://github.com/zacharyscott/tewdew.git
+  # first you'll need to setup the 1.8.7 REE heroku stack, nameofyourapp being what you want the subdomain to be  
+  heroku create nameofyourapp --stack bamboo-ree-1.8.7 --remote heroku
+  # push to heroku
+  git push heroku master
+  # setup the heroku database
+  heroku rake db:create
+  heroku rake db:migrate
+  heroku rake db:seed
+  # and you should be all set!
   
-  # push to git
-  $git remote add heroku git@heroku.com:my-tewdew-app.git
-  $git push heroku master
+If you run into any trouble be sure to {submit an issue here on github}[http://github.com/zacharyscott/tewdew/issues].
   
-More info: {Deploying Sinatra on Heroku}[http://blog.heroku.com/archives/2009/3/5/32_deploy_merb_sinatra_or_any_rack_app_to_heroku/]
-
 == Testing
 
-Tewdew uses Rack::Test and Test::Unit for all of it's testing.
+Since migrating to rails 3 I've yet to design any substantial tests.
 
-To run the tests:
-
-  ruby tests.rb
+* tasks_controller_test functional tests needs polishing
+* users_controller_test functional tests
+* priorities_controller_test functional tests
+* task, user and priorty unit tests
+* i will probably experiment with other spec's eventually
   
 == Additional Resources
 
-* {Sinatra}[http://www.sinatrarb.com/] - Ruby DSL tewdew was built on
-* {Datamapper}[http://datamapper.org/] - Ruby Object Relational Mapper tewdew uses
-* {dm-core}[http://github.com/datamapper/dm-core] - Datamapper dm-core documentation and development
-* {jQuery}[http://jquery.com/] - tewdew uses jQuery to magically add new tasks
-* {Rack::Test}[http://github.com/brynary/rack-test] - tewdew uses Rack::Test for testing
-* {Test::Unit}[http://ruby-doc.org/stdlib/libdoc/test/unit/rdoc/] - rdoc api information for Test:Unit
-* {haml}[http://haml-lang.com/] - tewdew uses haml for all of it's views
-* {sass}[http://sass-lang.com/] - tewdew uses sass for its css
+* {Ruby on Rails}[http://rubyonrails.org/]
+* {pg}[http://bitbucket.org/ged/ruby-pg/] - postgres gem for ruby that tewdew uses for development and production
+* {Heroku}[http://heroku.com/] - tewdew is designed to "just work" on heroku
+* {rvm}[http://rvm.beginrescueend.com/] - rvm is a great way to manage your rubies and gemsets
+* {bundler}[http://gembundler.com/] - tewdew uses bundler to manage dependencies
 
 == Todo
 
 * All tests to pass 100%
-* Port to Android -- jruby or {ruboto}[http://ruboto.org/]
+* Mobile / iPhone / iPad / Android stylesheets
+* oauth support
+* facebook connect support
+
+

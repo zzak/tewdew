@@ -10,8 +10,7 @@ Gem::Specification.new do |s|
   s.email = %q{zachary.s.scott@gmail.com}
   s.extra_rdoc_files = ["README.rdoc"]
   s.summary = "A simple to do list application"
-  s.source_code = "http://github.com/zacharyscott/tewdew"
-  s.homepage = "http://tewdew.heroku.com/"
+  s.homepage = "http://github.com/zacharyscott/tewdew"
   s.description = "A simple to do list application"
   s.files = Dir['*']
 end
