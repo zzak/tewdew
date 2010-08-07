@@ -1,0 +1,42 @@
+<div id="col1">
+<h1>To do lists made easy</h1>
+
+<p>tewdew is a fresh application designed for one purpose, effortless task management. Keep track of all your errands and actvities with this easy to use, designed to just work.</p>
+
+<div id="signup">
+  <h2><%= link_to 'Sign up is free and takes just a couple of seconds.', new_user_registration_path %></h2>
+  <p>It's never been so easy.</p>
+  <p>Already a user? <%= link_to 'Sign in.', new_user_session_path %></p>
+</div>
+
+<p>Within no time you will be on your way to a more organized life style.</p>
+
+</div>
+<div id="col2">
+  <%= image_tag('screenshot.png') %>
+</div>
+
+<div id="row2">
+<table><tr valign="top">
+  <td>
+    <%= link_to image_tag('rails.png'), "http://rubyonrails.org/" %>
+    <p class="center"><%= link_to 'Ruby on Rails', "http://rubyonrails.org/" %></p>
+    <p>Using Ruby on Rails allows tewdew to scale.. In all seriousness, Ruby on Rails is awesome and really made writing tewdew a pleasure.</p>
+  </td>
+  <td>
+    <%= link_to image_tag('mit.png'), "http://github.com/zacharyscott/tewdew" %>
+    <p class="center"><%= link_to 'Open Source', "http://github.com/zacharyscott/tewdew" %></p>
+    <p>Tewdew is open source so you know what you're getting yourself into. Feel free to download and use as you'd like, or <%= link_to 'issue a bug', "http://github.com/zacharyscott/tewdew/issues/" %>.</p>
+  </td>
+  <td>
+    <%= link_to image_tag('herokulogo.png'), "http://heroku.com/" %>
+    <p class="center"><%= link_to 'Hosted proudly', "http://heroku.com/" %></p>
+    <p>Tewdew is proudly hosted by the good people at Heroku. Why aren't you using them already?</p>
+  </td>
+  <td>
+    <%= link_to image_tag('redmine.png'), "http://www.redmine.org/" %>
+    <p class="center"><%= link_to 'Looking for more?', "http://www.redmine.org/" %></p>
+    <p>If you're in need of something more for project management, look no further than Redmine. <%= link_to 'Check out their demo', "http://demo.redmine.org/" %>.</p>
+  </td>
+</tr></table>
+</div>

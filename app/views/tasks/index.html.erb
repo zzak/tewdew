@@ -1,25 +1,16 @@
-<h1>Listing tasks</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Status</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.title %></td>
-    <td><%= task.status %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Task', new_task_path %>
+<div id="new">
+  <%= link_to 'Add a new task', new_task_path %> <%= link_to image_tag('add.png'), new_task_path %>
+</div>
+<div id="tasks">
+  <table cellspacing="0" cellpadding="0">
+  <% @tasks.each do |task| %>
+    <tr class="taskitem <%= task.status %> <%= cycle('odd', 'even') %>" valign="top">
+      <td class="title"><%= task.title %></td>
+      <td class="priority <%= task.priority.color %>"><%= task.priority.name %></td>
+      <td class="status"><%= link_to image_tag("#{task.status}.png"), update_status_path(task) %></td>
+      <td class="edit"><%= link_to image_tag('edit.png'), edit_task_path(task) %></td>
+      <td class="delete"><%= link_to image_tag('delete.png'), destroy_task_path(task) %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>

@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :username, :remember_me, :password, :password_confirmation
   
   has_many :tasks
+  
+  validates_presence_of :email, :username, :password, :password_confirmation
 end

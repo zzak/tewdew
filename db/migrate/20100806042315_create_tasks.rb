@@ -3,7 +3,8 @@ class CreateTasks < ActiveRecord::Migration
     create_table :tasks do |t|
       t.string :title
       t.boolean :status
-      t.users :references
+      t.references :user
+      t.references :priority
 
       t.timestamps
     end

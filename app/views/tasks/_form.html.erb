@@ -11,15 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.check_box :status %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div id="devise_form">
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :status %> <%= f.check_box :status %>
+    </div>
+    <div class="field">
+      <%= f.label :priority_id %> <%= f.collection_select(:priority_id, @priorities, :id, :name)
+ %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <%= link_to 'Back', tasks_path %>
   </div>
 <% end %>

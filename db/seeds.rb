@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+Priority.create(:name=>'Critical', :color => 'red')
+Priority.create(:name=>'High', :color => 'orange')
+Priority.create(:name=>'Medium', :color => 'yellow')
+Priority.create(:name=>'Good', :color => 'green')
+Priority.create(:name=>'Low', :color => 'blue')

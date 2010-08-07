@@ -1,72 +1,94 @@
-*
-  margin: 0
-  padding: 0
-  
-body
-  font-family: sans-serif
-  width: 100%
-  background: #EEEEEE
+* { padding: 0px; margin: 0px; }
 
-#header
-  text-align: center
-  background: #000
-  color: #EEE
+body {
+  font-family: sans-serif;
+}
+#page {
 
-#newtask
-  background: #666666
-  height: 30px
-  margin: 0 auto
-  padding: 10px
-  input
-    height: 30px
-    font-size: 22px
-    float: left
-    margin-right: 10px
-    
-#tasks
-  margin: 20px auto
-  p
-    font-size: 12px
-    margin-top: 25px
-  .taskItem
-    background: #BDBDBD
-    padding: 10px
-    margin: 5px
-    height: 30px
-    font-size: 18px
-    clear: both
-    border-bottom: 1px solid #666666
-  .completed
-    opacity: .6
-  .taskTitle
-    float: left
-  .taskStatus
-    float: right
-    width: 30px
-    height: 30px
-  form
-    float: right
-    margin: 0px 10px
-    input
-      font-size: 15px
-      font-weight: bold
-      height: 30px
-      padding: 5px 10px
+}
+a:link, a:visited { color: #3F3F3F; }
+a:hover, a:active { color: #6F6F6F; }
+a img { border: none; }
+#notices {
+  position: absolute;
+  background: #FFF;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  opacity: .80;
+  border-bottom: 4px solid #999;
+  cursor: pointer;
+}
+#header {
+  background: #2F2F2F;
+  color: #FFF;
+  padding: 15px 20px;
+}
+#header img {
+  padding-left: 25px;
+  padding-top: 15px;
+}
+#header p { margin: 0px 10px 10px 10px; color: #6F6F6F; }
+#header a:link, #header a:visited { color: #8F8F8F; }
+#header a:hover, #header a:active { color: #FFF; }
+#user_nav {
+  float: right;
+  font-size: 12px;
+}
+#user_nav p { margin: 0px; }
+#content h2 { padding: 20px; }
+#devise_form { width: 30%; margin: 0 auto; line-height: 25px; }
+#devise_form input { height: 30px; font-size: 15px; }
+.errorExplanation {
+  color: red;
+  width: 80%;
+  margin: 0 auto;
+  padding: 5px;
+  font-size: 12px;
+}
+.errorExplanation p, .errorExplanation ul {
+  padding: 0px 20px;
+}
+.errorExplanation h2 { font-size: 13px; }
+.errorExplanation ul { padding: 0px 0px 20px 30px; list-style-position: inside; }
 
-#editTaskTitle
-  text-align: center
-  margin-top: 20px
-  margin-bottom: 10px
-  
-#editTaskForms
-  input
-    font-size: 15px
-    font-weight: bold
-    height: 30px
-    padding: 5px 10px
-  #editTask
-    float: left
-    margin: 0px 10px
-  #deleteTask
-    float: right
-    margin: 0px 10px
+#content h1 { font-size: 20px; margin: 20px; text-align: center; }
+
+#new { text-align: center; font-size: 12px; margin: 10px; }
+#new img { height: 15px; }
+
+#tasks table { width: 99% }
+#tasks .taskitem td { padding: 10px; width: 20px; text-align: center; }
+#tasks .taskitem img { height: 25px; }
+#tasks td.title { width: 80%; text-align: left; }
+
+#tasks td.priority {
+  border: 1px solid #EEE;
+  color: #000;
+  font-size: 10px;
+}
+#tasks td.red { background: #EF3B3B; }
+#tasks td.orange { background: #EFAD3B; }
+#tasks td.yellow { background: #EDEF3B; }
+#tasks td.blue { background: #4E3BEF; }
+#tasks td.green { background: #55EF3B; }
+
+#tasks .status { width: 20px; margin: 0px 5px; }
+#tasks .edit { width: 20px; margin: 0px 5px; }
+#tasks .delete { margin: 0px 5px; }
+#tasks .true { opacity: .70; }
+#tasks .even { background: #DFF0FF; }
+#tasks .odd { background: #EFF7FF; }
+
+#footer {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+
+
+
+
+
+

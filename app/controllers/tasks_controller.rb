@@ -4,7 +4,7 @@ before_filter :authenticate_user!
   # GET /tasks
   # GET /tasks.xml
   def index
-    @tasks = Task.all(:conditions=>{:user_id => current_user})
+    @tasks = Task.all(:conditions=>{:user_id => current_user}, :order=>"status ASC, priority_id ASC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,13 +14,9 @@ before_filter :authenticate_user!
 
   # GET /tasks/1
   # GET /tasks/1.xml
-  def show
-    @task = Task.find(params[:id])
-    if @task.user == current_user
-      respond_to do |format|
-        format.html # show.html.erb
-        format.xml  { render :xml => @task }
-      end
+  def show    
+    respond_to do |format|
+      format.html { redirect_to :action=>"index" }
     end
   end
 
@@ -28,6 +24,7 @@ before_filter :authenticate_user!
   # GET /tasks/new.xml
   def new
     @task = Task.new
+    @priorities = Priority.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,6 +35,7 @@ before_filter :authenticate_user!
   # GET /tasks/1/edit
   def edit
     @task = Task.find(params[:id])
+    @priorities = Priority.all
   end
 
   # POST /tasks
@@ -48,7 +46,8 @@ before_filter :authenticate_user!
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to(@task, :notice => 'Task was successfully created.') }
+        flash[:notice] = 'Task was successfully created.'
+        format.html { redirect_to(:action=>"index") }
         format.xml  { render :xml => @task, :status => :created, :location => @task }
       else
         format.html { render :action => "new" }
@@ -64,7 +63,25 @@ before_filter :authenticate_user!
     if @task.user == current_user
       respond_to do |format|
         if @task.update_attributes(params[:task])
-          format.html { redirect_to(@task, :notice => 'Task was successfully updated.') }
+          flash[:notice] = "Task was successfully updated."
+          format.html { redirect_to(:action=>"index") }
+          format.xml  { head :ok }
+        else
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @task.errors, :status => :unprocessable_entity }
+        end
+      end
+    end
+  end
+  
+  def updatestatus
+    @task = Task.find(params[:id])
+    if @task.user == current_user
+      @task.status = true
+      respond_to do |format|
+        if @task.save
+          flash[:notice] = "Task was successfully updated."
+          format.html { redirect_to(:action=>"index") }
           format.xml  { head :ok }
         else
           format.html { render :action => "edit" }
@@ -76,7 +93,7 @@ before_filter :authenticate_user!
 
   # DELETE /tasks/1
   # DELETE /tasks/1.xml
-  def destroy
+  def destroytask
     @task = Task.find(params[:id])
     if @task.user == current_user
       @task.destroy

@@ -10,12 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100806034416) do
+ActiveRecord::Schema.define(:version => 20100807042716) do
+
+  create_table "priorities", :force => true do |t|
+    t.string   "name"
+    t.string   "color"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tasks", :force => true do |t|
     t.string   "title"
-    t.boolean  "status",     :default => false
+    t.boolean  "status"
     t.integer  "user_id"
+    t.integer  "priority_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

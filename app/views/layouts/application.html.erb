@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Tewdew</title>
+	<title>tewdew | a simple todo list application</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	
   <%= stylesheet_link_tag 'stylesheet' %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
+  <%= javascript_include_tag "application.js" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-<div id="user_nav">
-  <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>. Not you?
-    <%= link_to "Sign out", destroy_user_session_path %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-  <% end %>
+
+<%= render :partial => 'layouts/notices' if flash[:notice] %>
+
+<div id="page">
+  <div id="header">
+    <%= render :partial => 'layouts/usernav' %>
+    <%= render :partial => 'layouts/header' %>
+  </div>
+  <div id="content">
+    <%= yield %>
+  </div>
+  <%= render :partial => 'layouts/footer' %>
 </div>
-
-<%= yield %>
-
 </body>
 </html>

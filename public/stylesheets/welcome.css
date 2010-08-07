@@ -1,0 +1,50 @@
+* { padding: 0px; margin: 0px; }
+
+body {
+  font-family: 'Trebuchet M', 'Helvetica', sans-serif;
+  background: url('/images/welcomebg.png') repeat-y top center #252525;
+}
+#header {
+  text-align: right;
+  padding-right: 70px;
+  padding-top: 40px;
+}
+#welcome {
+  background: #FFF;
+  width: 75%;
+  padding: 5%;
+  margin: 20px auto;
+}
+a:link, a:visited { color: #3F3F3F; }
+a:hover, a:active { color: #6F6F6F; }
+a img { border: none; }
+.center { text-align: center; }
+
+#col1 { float: left; width: 49%; }
+#col2 { float: right; width: 49%; }
+
+#col1 p { margin: 10px 0px; }
+#col1 h1 { text-align: center; }
+
+#row2 { 
+  clear: both; 
+  width: 85%; 
+  margin: 0 auto; 
+  font-size: 12px;
+}
+#row2 img { margin-bottom: 5px; }
+#row2 td { padding: 5px; width: 23%; text-align: center; }
+#row2 p { text-align: left; }
+#row2 p.center { text-align: center; }
+
+#signup {
+  background: #5F5;
+  padding: 20px;
+  text-align: center;
+}
+#signup h2 { font-size: 16px; }
+#signup p { font-size: 13px; margin: 0; }
+
+
+
+
