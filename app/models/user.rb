@@ -9,5 +9,6 @@ class User < ActiveRecord::Base
   
   has_many :tasks
   
+  validates_uniqueness_of :email, :username  
   validates_presence_of :email, :username, :password, :password_confirmation
 end
