@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = %q{tewdew}
-  s.version = "0.1.0"
+  s.version = "0.1.2"
   s.has_rdoc = true
   s.required_ruby_version = ">= 1.8.7"
   s.platform = "ruby"
