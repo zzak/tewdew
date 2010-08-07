@@ -9,6 +9,12 @@ body {
   padding-right: 70px;
   padding-top: 40px;
 }
+#user_nav {
+  color: #FFF;
+  padding: 20px 0px 0px 20px;  
+}
+#user_nav a:link, #user_nav a:visited { color: #EEE; }
+#user_nav a:hover, #user_nav a:active { color: #8F8F8F; }
 #welcome {
   background: #FFF;
   width: 75%;
