@@ -5,17 +5,21 @@ body {
   background: url('/images/welcomebg.png') repeat-y top center #252525;
 }
 #header {
-  text-align: right;
-  padding-right: 70px;
-  padding-top: 40px;
+  float: right;
+  width: 190px;
+  padding: 20px 100px 20px 0px;
 }
 #user_nav {
+  float: left;
+  text-align: right;
+  width: 200px;
   color: #FFF;
   padding: 20px 0px 0px 20px;  
 }
 #user_nav a:link, #user_nav a:visited { color: #EEE; }
 #user_nav a:hover, #user_nav a:active { color: #8F8F8F; }
 #welcome {
+  clear: both;
   background: #FFF;
   width: 75%;
   padding: 5%;
@@ -50,6 +54,7 @@ a img { border: none; }
 }
 #signup h2 { font-size: 16px; }
 #signup p { font-size: 13px; margin: 0; }
+
 
 
 
