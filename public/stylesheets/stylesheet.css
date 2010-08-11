@@ -21,7 +21,7 @@ a img { border: none; }
 }
 #header {
   background: #2F2F2F;
-  color: #FFF;
+  color: #8F8F8F;
   padding: 15px 20px;
 }
 #header img {
@@ -29,16 +29,18 @@ a img { border: none; }
   padding-top: 15px;
 }
 #header p { margin: 0px 10px 10px 10px; color: #6F6F6F; }
-#header a:link, #header a:visited { color: #8F8F8F; }
-#header a:hover, #header a:active { color: #FFF; }
+#header a:link, #header a:visited { color: #FFF; }
+#header a:hover, #header a:active { color: #8F8F8F; }
 #user_nav {
   float: right;
   font-size: 12px;
 }
 #user_nav p { margin: 0px; }
 #content h2 { padding: 20px; }
-#devise_form { width: 30%; margin: 0 auto; line-height: 25px; }
-#devise_form input { height: 30px; font-size: 15px; }
+#devise_form { width: 90%; margin: 0 auto; line-height: 25px; }
+#devise_form input { height: 50px; font-size: 15px; }
+#devise_form input { width: 100%; }
+#devise_form input[type=checkbox] { width: 200px; height: 20px; }
 .errorExplanation {
   color: red;
   width: 80%;
@@ -54,18 +56,22 @@ a img { border: none; }
 
 #content h1 { font-size: 20px; margin: 20px; text-align: center; }
 
-#new { text-align: center; font-size: 12px; margin: 10px; }
-#new img { height: 15px; }
+#new { background: #7F7F7F; padding: 10px; }
+#new { text-align: center; font-size: 40px; margin: 10px; }
+#new img { height: 40px; }
+#new a { color: #FFF; text-decoration: none; }
 
 #tasks table { width: 99% }
-#tasks .taskitem td { padding: 10px; width: 20px; text-align: center; }
-#tasks .taskitem img { height: 25px; }
-#tasks td.title { width: 80%; text-align: left; }
+#tasks .taskitem td { padding: 10px; width:10px; text-align: center; }
+#tasks .taskitem td { height: 50px; }
+#tasks .taskitem img { height: 50px; }
+#tasks td.title { width: 80%; text-align: left; font-size: 30px; }
 
 #tasks td.priority {
   border: 1px solid #EEE;
   color: #000;
-  font-size: 10px;
+  padding-top: 20px;
+  font-size: 20px;
 }
 #tasks td.red { background: #EF3B3B; }
 #tasks td.orange { background: #EFAD3B; }
@@ -81,9 +87,9 @@ a img { border: none; }
 #tasks .odd { background: #EFF7FF; }
 
 #footer {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
+  clear: both;
+  text-align: right;
+  margin-top: 20px;
 }
 
 
