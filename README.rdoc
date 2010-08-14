@@ -58,3 +58,4 @@ Since migrating to rails 3 I've yet to design any substantial tests.
 * facebook connect support
 
 
+
