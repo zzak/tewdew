@@ -1,11 +1,11 @@
 Gem::Specification.new do |s|
   s.name = %q{tewdew}
-  s.version = "0.1.2"
+  s.version = "0.2.0.rc0"
   s.has_rdoc = true
   s.required_ruby_version = ">= 1.8.7"
   s.platform = "ruby"
   s.require_path = "."
-  s.required_rubygems_version = ">= 1.3.5"
+  s.required_rubygems_version = ">= 1.3.6"
   s.author = "Zachary Scott"
   s.email = %q{zachary.s.scott@gmail.com}
   s.extra_rdoc_files = ["README.rdoc"]
