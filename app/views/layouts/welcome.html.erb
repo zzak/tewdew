@@ -11,7 +11,12 @@
 <body>
 <%= render :partial => "layouts/usernav" %>
 <div id="header">
-  <%= link_to image_tag('tewdew.png'), "/tasks" %>
+  <%= link_to image_tag('tewdew.png'), "/" %>
+  
+  <ul id="menu">
+    <li><%= link_to "Lists", "/lists" %></li>
+    <li><%= link_to "Tasks", "/tasks" %></li>
+  </ul>
 </div>
 <div id="welcome">
   <div id="content">

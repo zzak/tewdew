@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :username, :remember_me, :password, :password_confirmation
   
   has_many :tasks
-  
+  has_many :lists 
   validates_uniqueness_of :email, :username  
   validates_presence_of :email, :username, :password, :password_confirmation
 end

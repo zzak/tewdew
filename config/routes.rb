@@ -1,8 +1,12 @@
 Tewdew::Application.routes.draw do
+  resources :lists
+
   resources :tasks
   
   match 'tasks/:id/destroy' => 'tasks#destroytask', :as => :destroy_task
   match 'tasks/:id/updatestatus' => 'tasks#updatestatus', :as => :update_status
+
+	match 'lists/:id/destroy' => 'lists#destroy', :as => :destroy_list
 
   devise_for :users, :path_names => { :sign_up => "register" }
 

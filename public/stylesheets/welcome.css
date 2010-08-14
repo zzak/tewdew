@@ -2,18 +2,35 @@
 
 body {
   font-family: 'Trebuchet M', 'Helvetica', sans-serif;
-  background: url('/images/welcomebg.png') repeat-y top center #252525;
+  background: #252525;
 }
-#header {
+#header img {
   float: right;
   width: 190px;
   padding: 20px 100px 20px 0px;
 }
+
+#header #menu {
+  width: 75%;
+  margin: 0 auto;
+  clear: both;
+  list-style-type: none;
+  text-align: left;
+}
+#header #menu li {
+  display: inline;
+  padding: 15px;
+  margin-right: 10px;
+  background: #666;
+}
+#header a:link, #header a:visited { color: #FFF; }
+#header a:hover, #header, a:active { color: #8F8F8F; }
+
 #user_nav {
   color: #FFF;
   float: left;
   text-align: right;
-  width: 200px;
+  width: 500px;
   padding: 20px 0px 0px 20px;  
 }
 #user_nav a:link, #user_nav a:visited { color: #EEE; }
@@ -23,7 +40,7 @@ body {
   background: #FFF;
   width: 75%;
   padding: 5%;
-  margin: 20px auto;
+  margin: 14px auto;
 }
 a:link, a:visited { color: #3F3F3F; }
 a:hover, a:active { color: #6F6F6F; }
@@ -32,6 +49,9 @@ a img { border: none; }
 
 #col1 { float: left; width: 49%; }
 #col2 { float: right; width: 49%; }
+#col2 { text-align: center; }
+#col2 img { width: 200px; }
+#col2 td { padding: 10px; }
 
 #col1 p { margin: 10px 0px; }
 #col1 h1 { text-align: center; }

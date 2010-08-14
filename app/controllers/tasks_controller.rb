@@ -25,6 +25,7 @@ before_filter :authenticate_user!
   def new
     @task = Task.new
     @priorities = Priority.all
+    @lists = List.all(:conditions=>{:user_id => current_user})
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,7 +36,11 @@ before_filter :authenticate_user!
   # GET /tasks/1/edit
   def edit
     @task = Task.find(params[:id])
+    if @task.user != current_user
+      redirect_to(:controller=>"lists", :action=>"show", :id=>@task.list)
+    end
     @priorities = Priority.all
+    @lists = List.all(:conditions=>{:user_id => current_user})
   end
 
   # POST /tasks
@@ -71,6 +76,8 @@ before_filter :authenticate_user!
           format.xml  { render :xml => @task.errors, :status => :unprocessable_entity }
         end
       end
+    else
+      redirect_to(:controller=>"lists", :action=>"show", :id=>@task.list)
     end
   end
   
@@ -88,6 +95,8 @@ before_filter :authenticate_user!
           format.xml  { render :xml => @task.errors, :status => :unprocessable_entity }
         end
       end
+    else
+      redirect_to(:controller=>"lists", :action=>"show", :id=>@task.list)
     end
   end
 
@@ -102,6 +111,8 @@ before_filter :authenticate_user!
         format.html { redirect_to(tasks_url) }
         format.xml  { head :ok }
       end
+    else
+      redirect_to(:controller=>"lists", :action=>"show", :id=>@task.list)
     end
   end
 end

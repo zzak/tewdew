@@ -1,0 +1,17 @@
+<h1>Lists</h1>
+<div id="new">
+  <%= link_to 'Add a new list', new_list_path %> <%= link_to image_tag('add.png'), new_list_path %>
+</div>
+
+<div id="tasks">
+  <table cellspacing="0" cellpadding="0">
+  <% @lists.each do |list| %>
+    <tr class="taskitem <%= cycle('odd', 'even') %>" valign="top">
+      <td class="title"><%= list.title %></td>
+      <td class="show"><%= link_to image_tag('show.png'), list %></td>
+      <td class="edit"><%= link_to image_tag('edit.png'), edit_list_path(list) %></td>
+      <td class="delete"><%= link_to image_tag('delete.png'), destroy_list_path(list) %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
