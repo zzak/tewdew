@@ -52,7 +52,7 @@ before_filter :authenticate_user!
     respond_to do |format|
       if @task.save
         flash[:notice] = 'Task was successfully created.'
-        format.html { redirect_to(:action=>"index") }
+        format.html { redirect_to(:controller=>"lists", :action=>"show", :id=>@task.list) }
         format.xml  { render :xml => @task, :status => :created, :location => @task }
       else
         format.html { render :action => "new" }
@@ -69,7 +69,7 @@ before_filter :authenticate_user!
       respond_to do |format|
         if @task.update_attributes(params[:task])
           flash[:notice] = "Task was successfully updated."
-          format.html { redirect_to(:action=>"index") }
+        format.html { redirect_to(:controller=>"lists", :action=>"show", :id=>@task.list) }
           format.xml  { head :ok }
         else
           format.html { render :action => "edit" }
@@ -88,7 +88,7 @@ before_filter :authenticate_user!
       respond_to do |format|
         if @task.save
           flash[:notice] = "Task was successfully updated."
-          format.html { redirect_to(:action=>"index") }
+        format.html { redirect_to(:controller=>"lists", :action=>"show", :id=>@task.list) }
           format.xml  { head :ok }
         else
           format.html { render :action => "edit" }
@@ -104,11 +104,12 @@ before_filter :authenticate_user!
   # DELETE /tasks/1.xml
   def destroytask
     @task = Task.find(params[:id])
+    @list = @task.list
     if @task.user == current_user
       @task.destroy
 
       respond_to do |format|
-        format.html { redirect_to(tasks_url) }
+        format.html { redirect_to(:controller=>"lists", :action=>"show", :id=>@list) }
         format.xml  { head :ok }
       end
     else

@@ -50,7 +50,7 @@ before_filter :authenticate_user!
     respond_to do |format|
       if @list.save
         flash[:notice] = 'List was successfully created.'
-        format.html { redirect_to(:action=>"index") }
+        format.html { redirect_to(:action=>"show", :id=>@list) }
         format.xml  { render :xml => @list, :status => :created, :location => @list }
       else
         format.html { render :action => "new" }
@@ -67,7 +67,7 @@ before_filter :authenticate_user!
       respond_to do |format|
         if @list.update_attributes(params[:list])
           flash[:notice] = "List was successfully updated."
-          format.html { redirect_to(:action=>"index") }
+        format.html { redirect_to(:action=>"show", :id=>@list) }
           format.xml  { head :ok }
         else
           format.html { render :action => "edit" }
