@@ -5,7 +5,7 @@
   <table cellspacing="0" cellpadding="0">
   <% @tasks.each do |task| %>
     <tr class="taskitem <%= task.status %> <%= cycle('odd', 'even') %>" valign="top">
-      <td class="title"><%= task.title %></td>
+      <td class="title tasktitle" tasklist="<%= task.list.title %>"><%= task.title %></td>
       <td class="tasklist"><%= link_to task.list.title, task.list %></td>
       <td class="priority <%= task.priority.color %>"><%= task.priority.name %></td>
       <td class="status"><%= link_to image_tag("#{task.status}.png"), update_status_path(task) %></td>

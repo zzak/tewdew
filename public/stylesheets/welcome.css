@@ -4,7 +4,7 @@ body {
   font-family: 'Trebuchet M', 'Helvetica', sans-serif;
   background: #252525;
 }
-#header img {
+#logo {
   float: right;
   width: 190px;
   padding: 20px 100px 20px 0px;
@@ -22,6 +22,11 @@ body {
   padding: 15px;
   margin-right: 10px;
   background: #666;
+}
+#user_nav img {
+  width: 32px;
+  height: 32px;
+  float: none;
 }
 #header a:link, #header a:visited { color: #FFF; }
 #header a:hover, #header, a:active { color: #8F8F8F; }

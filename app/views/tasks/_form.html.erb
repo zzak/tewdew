@@ -12,6 +12,13 @@
   <% end %>
 
   <div id="devise_form">
+	  <% unless controller.action_name == 'new' %>
+    	<div class="field" id="taskstatus">
+     	 <%= f.label :status %> <%= f.check_box :status %>
+    	</div>
+		<% else %>
+			<%= f.hidden_field :status, :value=>'false' %>	
+		<% end %>
 		<div class="field">
       <%= f.label :list_id %> <%= link_to 'Add a new', new_list_path %> <%= link_to image_tag('add.png'), new_list_path %><br />
 			 <%= f.collection_select(:list_id, @lists, :id, :title) %>
@@ -24,13 +31,6 @@
       <%= f.label :title %><br />
       <%= f.text_field :title %>
     </div>
-	  <% unless controller.action_name == 'new' %>
-    	<div class="field">
-     	 <%= f.label :status %> <%= f.check_box :status %>
-    	</div>
-		<% else %>
-			<%= f.hidden_field :status, :value=>'false' %>	
-		<% end %>
     <div class="actions">
     	<%= f.submit %>
     </div>

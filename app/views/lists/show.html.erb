@@ -2,6 +2,16 @@
 
 <h1>
   <%= @list.title %>
+  <% if @list.share == true %>
+    <sup id="shared_button" class="green">Shared</sup>
+  <% else %>
+    <sup class="red">Private</sup>
+  <% end %>
 </h1>
+<% if @list.share == true %>
+  <div id="shared_url">
+    This list is shared at <input type="text" value="<%= url_for(:controller=>"lists", :action=>"show", :id=>@list, :only_path=>false) %>" />    
+  </div>
+<% end %>
 
 <%= render :partial => "tasks" %>

@@ -1,8 +1,9 @@
 <div id="user_nav">
   <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>. Not you?
-    <%= link_to "Sign out", destroy_user_session_path %>
+    Welcome, <%= current_user.username %>! Not you?
+    <%= link_to "Log out", destroy_user_session_path %> <%= link_to image_tag('exit.png'), destroy_user_session_path, :title=>"Log out" %>
   <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+    <%= link_to "Sign up", new_user_registration_path %> <%= link_to image_tag('sign_up.png'), new_user_registration_path, :title=>"Sign up" %> or 
+    <%= link_to "Log in", new_user_session_path %> <%= link_to image_tag('sign_in.png'), new_user_session_path, :title=>"Log in" %>
   <% end %>
 </div>
