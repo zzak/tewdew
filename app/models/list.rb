@@ -2,6 +2,6 @@ class List < ActiveRecord::Base
 
 	validates_presence_of :title
 
-  belongs_to :user, :dependant => :destroy
+  belongs_to :user
 	has_many :tasks
 end
