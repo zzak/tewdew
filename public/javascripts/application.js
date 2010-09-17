@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-  $('.rounded').corner();
-
   $("#notices").click(function() {
     $("#notices").slideUp(); 
   });
@@ -386,4 +384,7 @@ $(document).ready(function() {
       name: 'cream' // Style it according to the preset 'cream' style
    }
   });
+
+  $('.rounded').corner();
+
 });
