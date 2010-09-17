@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+  $('.rounded').corner();
+
   $("#notices").click(function() {
     $("#notices").slideUp(); 
   });

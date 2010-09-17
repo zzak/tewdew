@@ -9,10 +9,12 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<%= render :partial => "layouts/usernav" %>
+
+<div id="logo">
+  <%= link_to image_tag('tewdew.png'), "/" %>
+</div>
 <div id="header">
-  <%= link_to image_tag('tewdew.png'), "/", :id=>"logo" %>
-  
+  <%= render :partial => "layouts/usernav" %>
   <ul id="menu">
     <li><%= link_to "Lists", "/lists" %></li>
     <li><%= link_to "Tasks", "/tasks" %></li>
@@ -25,6 +27,7 @@
 </div>
   <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
   <%= javascript_include_tag "qtip.js" %>
+  <%= javascript_include_tag "jquery.corner.js" %>
   <%= javascript_include_tag "application.js" %>
 </body>
 </html>

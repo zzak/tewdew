@@ -5,23 +5,29 @@ body {
   background: #252525;
 }
 #logo {
-  float: right;
-  width: 190px;
-  padding: 20px 100px 20px 0px;
+  clear: both; 
+  text-align: center;
+  margin: 30px; 
+}
+#logo img { width: 400px; }
+
+#header {
+  clear: both;
+  margin-top: 30px;
 }
 
 #header #menu {
-  width: 75%;
-  margin: 0 auto;
-  clear: both;
+  width: 250px; 
   list-style-type: none;
-  text-align: left;
+  float: left;
+  padding-left: 10%;
 }
 #header #menu li {
   display: inline;
   padding: 15px;
   margin-right: 10px;
   background: #666;
+  font-size: 1.5em;
 }
 #user_nav img {
   width: 32px;
@@ -33,40 +39,51 @@ body {
 
 #user_nav {
   color: #FFF;
-  float: left;
-  text-align: right;
-  width: 500px;
-  padding: 20px 0px 0px 20px;  
+  float: right;
+  width: 350px;
+  font-size: 1.5em;
+  padding-right: 5%;
 }
 #user_nav a:link, #user_nav a:visited { color: #EEE; }
 #user_nav a:hover, #user_nav a:active { color: #8F8F8F; }
 #welcome {
   clear: both;
-  background: #FFF;
-  width: 75%;
   padding: 5%;
-  margin: 14px auto;
+  margin: 0px auto;
 }
 a:link, a:visited { color: #3F3F3F; }
 a:hover, a:active { color: #6F6F6F; }
 a img { border: none; }
 .center { text-align: center; }
 
-#col1 { float: left; width: 49%; }
-#col2 { float: right; width: 49%; }
-#col2 { text-align: center; }
+#col1, #col2, #row2 {
+  background: #FFF; 
+  margin: 25px auto;
+  padding: 50px; 
+  text-align: center;
+  width: 90%;
+}
+
+#col1, #col2 {
+  font-size: 1.5em;
+}
+
+#col1 { margin-top: -50px; }
+
 #col2 img { width: 200px; }
 #col2 td { padding: 10px; }
 
 #col1 p { margin: 10px 0px; }
 #col1 h1 { text-align: center; }
 
+#col2 table { margin: 0 auto; }
+
 #row2 { 
   clear: both; 
-  width: 85%; 
   margin: 0 auto; 
   font-size: 12px;
 }
+#row2 table { width: 80%; margin: 0 auto; }
 #row2 img { margin-bottom: 5px; }
 #row2 td { padding: 5px; width: 23%; text-align: center; }
 #row2 p { text-align: left; }
@@ -74,11 +91,13 @@ a img { border: none; }
 
 #signup {
   background: #5F5;
+  width: 70%;
+  margin: 10px auto;
   padding: 20px;
   text-align: center;
 }
-#signup h2 { font-size: 16px; }
-#signup p { font-size: 13px; margin: 0; }
+#signup h2 { font-size: 1.1em; }
+#signup p { font-size: 1em; margin: 10px 0px; }
 
 
 
