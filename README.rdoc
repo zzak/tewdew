@@ -52,10 +52,6 @@ Since migrating to rails 3 I've yet to design any substantial tests.
 
 == Todo
 
-* All tests to pass 100%
-* Mobile / iPhone / iPad / Android stylesheets
-* oauth support
-* facebook connect support
-
+{my shared todo list for the app}[http://tewdew.heroku.com/lists/4]
 
 
