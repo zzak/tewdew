@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-before_filter :authenticate_user!
+before_filter :authenticate_user!, :except => :show
   # GET /lists
   # GET /lists.xml
   def index
@@ -22,6 +22,9 @@ before_filter :authenticate_user!
         format.html # show.html.erb
         format.xml  { render :xml => @list }
       end
+    else
+      flash[:notice] = "You must be logged in to view that."
+      redirect_to new_user_session_path 
     end
   end
 
